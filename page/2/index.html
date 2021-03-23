@@ -1,0 +1,233 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>凡墙总是门</title><meta name="keywords" content="安卓,逆向,android,arm,抓包"><meta name="author" content="Kevin"><meta name="copyright" content="Kevin"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="凡墙总是门">
+<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:site_name" content="凡墙总是门">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/avatar.jpeg">
+<meta property="article:author" content="Kevin">
+<meta property="article:tag" content="安卓,逆向,android,arm,抓包">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/avatar.jpeg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/page/2/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-03-23 13:46:52'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/avatar.jpeg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-03-23-051441.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">凡墙总是门</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">凡墙总是门</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/kevinspider" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:zhangyang.spider@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/ndk/" title="安卓NDK开发">     <img class="post_bg" src="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-02-25-094138.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="安卓NDK开发"></a></div><div class="recent-post-info"><a class="article-title" href="/ndk/" title="安卓NDK开发">安卓NDK开发</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-03-22T11:29:21.000Z" title="发表于 2021-03-22 19:29:21">2021-03-22</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/so/">so</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/so/">so</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/ndk/">ndk</a></span></div><div class="content">参考: https://developer.android.com/ndk/guides
+JNI 简述
+JNI: Java Native Interface 的缩写, 通常翻译为 Java 本地接口;
+从 Java1.1 开始, Java Native Interface 标准成为了 Java 平台的一部分, 它允许了 Java 代码和其他语言的代码进行交互; JNI 一开始是为了本地已编译的语言, 尤其是 C 和 C++设计的, 但是现在只要调用约定受支持的语言都可以使用;
+JNI不是 Android 特有的, windowd, linux 等凡是有 JVM 的地方都支持 JNI; Android 的虚拟机 Dalvik/Art 都支持 JNI 标准; 通过 JNI, 就可以打通 Android 中 Java 世界和 Native 世界;
+
+NDK 简述
+NDK: Native Development Kit的缩写
+NDK 是一系列工具的集合, 是一个开发套件, 帮助开发者快速开发以及调试 C/C++ 的动态库;
+为了弥补 Java 容易被反编译的问题, 一些重要的逻辑和算法可以采用 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/androidenv/" title="逆向环境搭建">     <img class="post_bg" src="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-02-24-023938.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="逆向环境搭建"></a></div><div class="recent-post-info"><a class="article-title" href="/androidenv/" title="逆向环境搭建">逆向环境搭建</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-03-22T11:26:55.000Z" title="发表于 2021-03-22 19:26:55">2021-03-22</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/env/">env</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/env/">env</a></span></div><div class="content">google 系统镜像
+推荐8.1.0 OPM7.181205.001
+下载地址: https://developers.google.com/android/images
+国内镜像: http://aosp.opersys.com/
+
+sdk 工具包
+包含 adb, fastboot, systrace 等
+下载地址: https://developer.android.com/studio/releases/platform-tools
+
+twrp 管理工具
+下载地址: https://twrp.me/Devices/
+
+SuperSU
+下载地址: https://supersuroot.org/download/
+
+Magisk
+下载地址: https://github.com/topjohnwu/Magisk/releases
+
+apktool
+下载地址: https://bitbucket.org/iBotPeaches/apktool/downloads/
+
+wifiADB
+下载地址: https://play.google.com/store/apps/details?i ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/neiwangchuangtou/" title="一行命令内网穿透">     <img class="post_bg" src="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-02-24-021243.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="一行命令内网穿透"></a></div><div class="recent-post-info"><a class="article-title" href="/neiwangchuangtou/" title="一行命令内网穿透">一行命令内网穿透</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-03-22T11:25:18.000Z" title="发表于 2021-03-22 19:25:18">2021-03-22</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/others/">others</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/others/">others</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/">内网穿透</a></span></div><div class="content">准备本地搭建 web 服务
+12345678910111213__author__ = &quot;Kevin&quot;__time__ = &quot;2021/2/24&quot;__blog__ = &quot;https://kevinspider.github.io/&quot;from flask import Flaskapp = Flask(__name__)@app.route(&#x27;/&#x27;)def hello_world():   return &#x27;Hello World&#x27;if __name__ == &#x27;__main__&#x27;:   app.run()
+
+运行起来之后, 可以通过本地端口 http://127.0.0.1:5000/ 进行正常访问
+穿透开启了本地服务之后, 接下来可以通过 localhost 命令将本地网站提供给所有人访问ssh -R 80:localhost:5000 localhost.run返回的外网地址为:直接访问即可: http://zhangyang-9d453a8b.localhost. ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/xposed/" title="xposed">     <img class="post_bg" src="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-02-09-061629.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="xposed"></a></div><div class="recent-post-info"><a class="article-title" href="/xposed/" title="xposed">xposed</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-03-22T11:22:43.000Z" title="发表于 2021-03-22 19:22:43">2021-03-22</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/xposed/">xposed</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/xposed/">xposed</a></span></div><div class="content">Xposed 简介Xposed 是可以在不修改 apk 的情况下影响程序运行, 修改系统的框架基于它可以制作出很多功能强大的模块, 且在功能不冲突的情况下同时运行;在这个框架下, 我们可以加载自己编写的插件 app, 实现对目标 apk 的注入, 拦截等;
+xposed 原理控制 zygote 进程, 通过替换/system/bin/app_precess 程序控制 zygote 进程, 使得它在系统启动的过程中加载 Xposed framework 的一个 jar 文件 (XposedBridge.jar), 从而完成对 zygote 进程机器创建的虚拟机的劫持, 并且能够允许开发者独立替代任何class, 例如 framework本身, 系统 UI 又或者任意一个 app;
+Xposed 开发范式新建 android 项目, 在 AndroidManifest.xml 文件中, Application中 activity 标签上面添加以下代码:
+123456789&lt;meta-data    android:name=&quot;xposedmodule&quot;    an ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/objection/" title="objection 指南">     <img class="post_bg" src="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-02-09-060511.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="objection 指南"></a></div><div class="recent-post-info"><a class="article-title" href="/objection/" title="objection 指南">objection 指南</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-03-22T11:17:47.000Z" title="发表于 2021-03-22 19:17:47">2021-03-22</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/objection/">objection</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/objection/">objection</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/wallbreaker/">wallbreaker</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/dexdump/">dexdump</a></span></div><div class="content">objectiongobjection 启动attach 启动1objection -g -d packagename explore
+
+spawn 启动12--startup-commandobjection -g packagename explore --startup-command &#39;android hooking watch class_method android.app.AlertDialog.onCreate --dump-args --dump-backtrace --dump-return&#39;
+
+连接远程自定义端口1objection -N -h 192.168.0.1 -p 6666 -g com.kevin.demo1 explore
+
+objection memorymemory list modules查看内存中加载的 module , 可以方便获取 .so 的基地址
+1memory list modules [--json module.json]
+
+
+result
+
+memory list exports查看指定 module 的导出函数 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/fridahookjava/" title="frida hook java">     <img class="post_bg" src="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-03-22-103425.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="frida hook java"></a></div><div class="recent-post-info"><a class="article-title" href="/fridahookjava/" title="frida hook java">frida hook java</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-03-22T10:30:40.000Z" title="发表于 2021-03-22 18:30:40">2021-03-22</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/frida/">frida</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/frida/">frida</a></span></div><div class="content">Frida 启动attach 启动直接附加到指定包名的应用中
+1frida -U com.kevin.android -l hook.js --no-pause
+
+直接附加到当前应用中
+123456789101112131415161718frida -UF -l hook.js --no-pauseimport sysimport timeimport fridadef on_message(message,data):    print(&quot;message&quot;,message)    print(&quot;data&quot;,data)device = frida.get_usb_device()session = device.attach(&quot;com.kevin.demo1&quot;)with open(&quot;./demo1.js&quot;,&quot;r&quot;) as f:    script = session.create_script(f.read())script.on(&quot;message&quot;,on_mess ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/avatar.jpeg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Kevin</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/kevinspider"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/kevinspider" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:zhangyang.spider@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/arm/" title="arm"><img src="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-02-19-091014.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="arm"/></a><div class="content"><a class="title" href="/arm/" title="arm">arm</a><time datetime="2021-03-22T11:45:16.000Z" title="发表于 2021-03-22 19:45:16">2021-03-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/101fudao/" title="101辅导"><img src="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-03-15-084433.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="101辅导"/></a><div class="content"><a class="title" href="/101fudao/" title="101辅导">101辅导</a><time datetime="2021-03-22T11:44:04.000Z" title="发表于 2021-03-22 19:44:04">2021-03-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/tiejia/" title="铁甲"><img src="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-03-15-080211.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="铁甲"/></a><div class="content"><a class="title" href="/tiejia/" title="铁甲">铁甲</a><time datetime="2021-03-22T11:43:07.000Z" title="发表于 2021-03-22 19:43:07">2021-03-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/baobaoshu/" title="宝宝树孕育"><img src="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-03-15-034223.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="宝宝树孕育"/></a><div class="content"><a class="title" href="/baobaoshu/" title="宝宝树孕育">宝宝树孕育</a><time datetime="2021-03-22T11:42:23.000Z" title="发表于 2021-03-22 19:42:23">2021-03-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/git/" title="git"><img src="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-03-15-032134.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="git"/></a><div class="content"><a class="title" href="/git/" title="git">git</a><time datetime="2021-03-22T11:40:25.000Z" title="发表于 2021-03-22 19:40:25">2021-03-22</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/demo/"><span class="card-category-list-name">demo</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/env/"><span class="card-category-list-name">env</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/frida/"><span class="card-category-list-name">frida</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/objection/"><span class="card-category-list-name">objection</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/others/"><span class="card-category-list-name">others</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/so/"><span class="card-category-list-name">so</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/xposed/"><span class="card-category-list-name">xposed</span><span class="card-category-list-count">1</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/arm/" style="font-size: 1.1em; color: #999">arm</a> <a href="/tags/demo/" style="font-size: 1.5em; color: #99a9bf">demo</a> <a href="/tags/dexdump/" style="font-size: 1.1em; color: #999">dexdump</a> <a href="/tags/env/" style="font-size: 1.1em; color: #999">env</a> <a href="/tags/frida/" style="font-size: 1.5em; color: #99a9bf">frida</a> <a href="/tags/git/" style="font-size: 1.1em; color: #999">git</a> <a href="/tags/ndk/" style="font-size: 1.1em; color: #999">ndk</a> <a href="/tags/objection/" style="font-size: 1.1em; color: #999">objection</a> <a href="/tags/ollvm/" style="font-size: 1.1em; color: #999">ollvm</a> <a href="/tags/others/" style="font-size: 1.37em; color: #99a4b2">others</a> <a href="/tags/so/" style="font-size: 1.23em; color: #999ea6">so</a> <a href="/tags/wallbreaker/" style="font-size: 1.1em; color: #999">wallbreaker</a> <a href="/tags/xposed/" style="font-size: 1.1em; color: #999">xposed</a> <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="font-size: 1.1em; color: #999">内网穿透</a> <a href="/tags/%E6%8A%93%E5%8C%85/" style="font-size: 1.1em; color: #999">抓包</a></div></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">16</div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2021-03-23T05:46:52.350Z"></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Kevin</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function subtitleType () {
+  fetch('https://api.btstu.cn/yan/api.php?charset=utf-8&encode=json')
+    .then(response => response.json())
+    .then(data => {
+      if (true) {
+        var sub = "".length == 0 ? new Array() : "".split(',')
+        var both = sub.unshift(data.text)
+        typed = new Typed('#subtitle', {
+          strings: sub,
+          startDelay: 300,
+          typeSpeed: 150,
+          loop: true,
+          backSpeed: 50,
+        })
+      } else {
+        document.getElementById('subtitle').innerHTML = data.text
+      }
+    })
+}
+
+if (true) {
+  if (typeof Typed === 'function') {
+    subtitleType()
+  } else {
+    getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js').then(subtitleType)
+  }
+} else {
+  subtitleType()
+}
+</script></div></div></body></html>

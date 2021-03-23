@@ -1,0 +1,268 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>逆向环境搭建 | 凡墙总是门</title><meta name="keywords" content="env"><meta name="author" content="Kevin"><meta name="copyright" content="Kevin"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="google 系统镜像 推荐8.1.0 OPM7.181205.001 下载地址: https:&#x2F;&#x2F;developers.google.com&#x2F;android&#x2F;images 国内镜像: http:&#x2F;&#x2F;aosp.opersys.com&#x2F;  sdk 工具包 包含 adb, fastboot, systrace 等 下载地址: https:&#x2F;&#x2F;developer.android.com&#x2F;studio&#x2F;r">
+<meta property="og:type" content="article">
+<meta property="og:title" content="逆向环境搭建">
+<meta property="og:url" content="http://example.com/androidenv/index.html">
+<meta property="og:site_name" content="凡墙总是门">
+<meta property="og:description" content="google 系统镜像 推荐8.1.0 OPM7.181205.001 下载地址: https:&#x2F;&#x2F;developers.google.com&#x2F;android&#x2F;images 国内镜像: http:&#x2F;&#x2F;aosp.opersys.com&#x2F;  sdk 工具包 包含 adb, fastboot, systrace 等 下载地址: https:&#x2F;&#x2F;developer.android.com&#x2F;studio&#x2F;r">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-02-24-023938.jpg">
+<meta property="article:published_time" content="2021-03-22T11:26:55.000Z">
+<meta property="article:modified_time" content="2021-03-22T11:28:05.759Z">
+<meta property="article:author" content="Kevin">
+<meta property="article:tag" content="env">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-02-24-023938.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/androidenv/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-03-22 19:28:05'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/avatar.jpeg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-02-24-023938.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">凡墙总是门</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">逆向环境搭建</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-03-22T11:26:55.000Z" title="发表于 2021-03-22 19:26:55">2021-03-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-03-22T11:28:05.759Z" title="更新于 2021-03-22 19:28:05">2021-03-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/env/">env</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="google-系统镜像"><a href="#google-系统镜像" class="headerlink" title="google 系统镜像"></a>google 系统镜像</h1><ul>
+<li>推荐<code>8.1.0 OPM7.181205.001</code></li>
+<li>下载地址: <a target="_blank" rel="noopener" href="https://developers.google.com/android/images">https://developers.google.com/android/images</a></li>
+<li>国内镜像: <a target="_blank" rel="noopener" href="http://aosp.opersys.com/">http://aosp.opersys.com/</a></li>
+</ul>
+<h1 id="sdk-工具包"><a href="#sdk-工具包" class="headerlink" title="sdk 工具包"></a>sdk 工具包</h1><ul>
+<li>包含 adb, fastboot, systrace 等</li>
+<li>下载地址: <a target="_blank" rel="noopener" href="https://developer.android.com/studio/releases/platform-tools">https://developer.android.com/studio/releases/platform-tools</a></li>
+</ul>
+<h1 id="twrp-管理工具"><a href="#twrp-管理工具" class="headerlink" title="twrp 管理工具"></a>twrp 管理工具</h1><ul>
+<li>下载地址: <a target="_blank" rel="noopener" href="https://twrp.me/Devices/">https://twrp.me/Devices/</a></li>
+</ul>
+<h1 id="SuperSU"><a href="#SuperSU" class="headerlink" title="SuperSU"></a>SuperSU</h1><ul>
+<li>下载地址: <a target="_blank" rel="noopener" href="https://supersuroot.org/download/">https://supersuroot.org/download/</a></li>
+</ul>
+<h1 id="Magisk"><a href="#Magisk" class="headerlink" title="Magisk"></a>Magisk</h1><ul>
+<li>下载地址: <a target="_blank" rel="noopener" href="https://github.com/topjohnwu/Magisk/releases">https://github.com/topjohnwu/Magisk/releases</a></li>
+</ul>
+<h1 id="apktool"><a href="#apktool" class="headerlink" title="apktool"></a>apktool</h1><ul>
+<li>下载地址: <a target="_blank" rel="noopener" href="https://bitbucket.org/iBotPeaches/apktool/downloads/">https://bitbucket.org/iBotPeaches/apktool/downloads/</a></li>
+</ul>
+<h1 id="wifiADB"><a href="#wifiADB" class="headerlink" title="wifiADB"></a>wifiADB</h1><ul>
+<li>下载地址: <a target="_blank" rel="noopener" href="https://play.google.com/store/apps/details?id=com.ttxapps.wifiadb&amp;hl=en_US">https://play.google.com/store/apps/details?id=com.ttxapps.wifiadb&amp;hl=en_US</a></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># connect</span></span><br><span class="line">adb connect ip:port</span><br><span class="line">adb shell</span><br><span class="line"></span><br><span class="line"><span class="comment"># disconnect</span></span><br><span class="line">adb disconnect</span><br></pre></td></tr></table></figure>
+
+<h1 id="安卓系统设置"><a href="#安卓系统设置" class="headerlink" title="安卓系统设置"></a>安卓系统设置</h1><h2 id="wifi-显示错误"><a href="#wifi-显示错误" class="headerlink" title="wifi 显示错误"></a>wifi 显示错误</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">settings put global captive_portal_http_url https://www.google.cn/generate_204</span><br><span class="line">settings put global captive_portal_https_url https://www.google.cn/generate_204</span><br><span class="line">settings put global ntp_server 1.hk.pool.ntp.org</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure>
+
+<h1 id="frida-frida-tools-objection-版本"><a href="#frida-frida-tools-objection-版本" class="headerlink" title="frida frida-tools objection 版本"></a>frida frida-tools objection 版本</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 保证安装的顺序 否则可能会导致安装的版本不对</span></span><br><span class="line">pip install frida==12.8.0</span><br><span class="line">pip install frida-tools==5.3.0</span><br><span class="line">pip install objection==1.8.4</span><br></pre></td></tr></table></figure>
+
+<h1 id="BurpSuite-破解版"><a href="#BurpSuite-破解版" class="headerlink" title="BurpSuite 破解版"></a>BurpSuite 破解版</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u014549283/article/details/81248886">https://blog.csdn.net/u014549283/article/details/81248886</a></p>
+<h1 id="brook"><a href="#brook" class="headerlink" title="brook"></a>brook</h1><p><a target="_blank" rel="noopener" href="https://github.com/txthinking/brook">https://github.com/txthinking/brook</a></p>
+<h1 id="010editor-过期处理"><a href="#010editor-过期处理" class="headerlink" title="010editor 过期处理"></a>010editor 过期处理</h1><p><img src="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2020-11-27-082817.jpg" alt="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2020-11-27-082817.jpg"></p>
+<h1 id="miniconda"><a href="#miniconda" class="headerlink" title="miniconda"></a>miniconda</h1><p>pyenv依赖问题一直很麻烦，可以切到miniconda</p>
+<ol>
+<li>下载安装脚本（建议科学）：<br>proxychains wget</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh">https://repo.anaconda.com/miniconda/Miniconda3-lat…</a></p>
+<ol>
+<li>给安装脚本可执行权限<br>chmod +x Miniconda3-latest-Linux-x86_64.sh</li>
+<li>运行安装脚本：<br>sh Miniconda3-latest-Linux-x86_64.sh</li>
+<li>安装python3.8.0环境（建议科学）<br>proxychains conda create -n py380 python=3.8.0</li>
+<li>切换到python3.8.0<br>conda activate py380</li>
+<li>安装frida 12.8.0全家桶（建议科学）<br>proxychains pip install frida12.8.0<br>proxychains pip install frida-tools5.3.0<br>proxychains pip install objection==1.8.4</li>
+<li>为了新建的终端默认的env在py380，可以将下面这句话放在/root/.bashrc的末尾，然后source一下。</li>
+</ol>
+<p>conda activate py380</p>
+<ol>
+<li>也可以把这句话放在/root/.bashrc的末尾，source之后只要运行mfrida命令即可切换到py380环境。</li>
+</ol>
+<p>alias mfrida=”conda activate py380”</p>
+<ol>
+<li>第七条和第八条二选一即可。开始享受12.8.0全家桶吧~</li>
+</ol>
+<h1 id="charles-破解版"><a href="#charles-破解版" class="headerlink" title="charles 破解版"></a>charles 破解版</h1><p><a target="_blank" rel="noopener" href="https://www.zzzmode.com/mytools/charles/">https://www.zzzmode.com/mytools/charles/</a></p>
+<h1 id="fastboot"><a href="#fastboot" class="headerlink" title="fastboot"></a>fastboot</h1><p><code>r0ysue</code> 星球直接搜索 <code>fastboot</code> 即可</p>
+<p><img src="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2020-11-28-085946.png" alt="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2020-11-28-085946.png"></p>
+<h1 id="android-系统刷机教程"><a href="#android-系统刷机教程" class="headerlink" title="android 系统刷机教程"></a>android 系统刷机教程</h1><p><a target="_blank" rel="noopener" href="https://github.com/r0ysue/AndroidSecurityStudy/blob/master/FRIDA/A01/README.md">https://github.com/r0ysue/AndroidSecurityStudy/blob/master/FRIDA/A01/README.md</a></p>
+<h1 id="charles-抓包"><a href="#charles-抓包" class="headerlink" title="charles 抓包"></a>charles 抓包</h1><ul>
+<li><a target="_blank" rel="noopener" href="http://zhaoxincheng.com/index.php/2020/07/16/%E5%AE%89%E5%8D%937-0%E5%8F%8A%E4%BB%A5%E4%B8%8A%E6%8A%93%E5%8C%85%E8%AF%81%E4%B9%A6%E5%B0%8F%E6%8A%80%E5%B7%A7/">http://zhaoxincheng.com/index.php/2020/07/16/安卓7-0及以上抓包证书小技巧/</a></li>
+</ul>
+<ol>
+<li>将证书安装到 user 下</li>
+<li>用re管理器把<code>/data/misc/user/0/cacerts-added/</code>这个路径下面的文件复制到<code>/system/etc/security/cacerts</code></li>
+</ol>
+<h1 id="kali-环境搭建"><a href="#kali-环境搭建" class="headerlink" title="kali 环境搭建"></a>kali 环境搭建</h1><h2 id="kali-root"><a href="#kali-root" class="headerlink" title="kali root"></a>kali root</h2><p>开机后用kali/kali进去入系统，运行sudo passwd root，给root设个密码toor，重复retype一次。然后重启以root/toor进入系统即可。</p>
+<h2 id="kali-设置时区"><a href="#kali-设置时区" class="headerlink" title="kali 设置时区"></a>kali 设置时区</h2><p>kali里面时间老是不对，其实只是时区不对而已，一个命令就搞定：<br><code>dpkg-reconfigure tzdata</code><br>然后选择Asia→Shanghai，然后重启即可。</p>
+<h2 id="kali-常用软件"><a href="#kali-常用软件" class="headerlink" title="kali 常用软件"></a>kali 常用软件</h2><h3 id="安装-jnetop-htop-tree"><a href="#安装-jnetop-htop-tree" class="headerlink" title="安装 jnetop htop tree"></a>安装 jnetop htop tree</h3><p>apt-get install jnettop htop<br>apt-get install tree</p>
+<h2 id="kali-换源"><a href="#kali-换源" class="headerlink" title="kali 换源"></a>kali 换源</h2><p>1.更新软件源<br><code>sudo vim /etc/apt/sources.list</code><br>2.选择比较合适的源(选择一个即可）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#中科大</span></span><br><span class="line">deb http://mirrors.ustc.edu.cn/kali kali-rolling main non-free contrib</span><br><span class="line">deb-src http://mirrors.ustc.edu.cn/kali kali-rolling main non-free contrib</span><br><span class="line"><span class="comment">#阿里云</span></span><br><span class="line">deb http://mirrors.aliyun.com/kali kali-rolling main non-free contrib</span><br><span class="line">deb-src http://mirrors.aliyun.com/kali kali-rolling main non-free contrib</span><br><span class="line"></span><br><span class="line"><span class="comment">#清华大学</span></span><br><span class="line">deb http://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main contrib non-free</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/kali kali-rolling main contrib non-free</span><br><span class="line"></span><br><span class="line"><span class="comment">#163</span></span><br><span class="line">deb http://mirrors.163.com/debian wheezy main non-free contrib</span><br><span class="line">deb-src http://mirrors.163.com/debian wheezy main non-free contrib</span><br><span class="line">deb http://mirrors.163.com/debian wheezy-proposed-updates main non-free contrib</span><br><span class="line">deb-src http://mirrors.163.com/debian wheezy-proposed-updates main non-free contrib</span><br><span class="line">deb-src http://mirrors.163.com/debian-security wheezy/updates main non-free contrib</span><br><span class="line"></span><br><span class="line"><span class="comment">#东软大学</span></span><br><span class="line">deb http://mirrors.neusoft.edu.cn/kali kali-rolling/main non-free contrib</span><br><span class="line">deb-src http://mirrors.neusoft.edu.cn/kali kali-rolling/main non-free contrib</span><br><span class="line"></span><br><span class="line"><span class="comment">#官方源</span></span><br><span class="line">deb http://http.kali.org/kali kali-rolling main non-free contrib</span><br><span class="line">deb-src http://http.kali.org/kali kali-rolling main non-free contrib</span><br><span class="line"></span><br><span class="line"><span class="comment">#jessie 需要手动调整 复制过来有问题</span></span><br><span class="line">deb http://ftp.de.debian.org/debian jessie main</span><br></pre></td></tr></table></figure>
+
+<h2 id="kali-非-root-用户使用-adb"><a href="#kali-非-root-用户使用-adb" class="headerlink" title="kali 非 root 用户使用 adb"></a>kali 非 root 用户使用 adb</h2><p>非 root 用户使用 adb 命令时可能会出现以下错误<br><code>adb: insufficient permissions for device: missing udev rules?</code></p>
+<p>解决方式:<br><code>vim /etc/udev/rules.d/51-android.rules</code></p>
+<p>然后添加:<br><code>SUBSYSTEM==&quot;usb&quot;, ENV&#123;DEVTYPE&#125;==&quot;usb_device&quot;, MODE=&quot;0666&quot;</code><br>再次拔插设备即可</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Kevin</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/androidenv/">http://example.com/androidenv/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">凡墙总是门</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/env/">env</a></div><div class="post_share"><div class="social-share" data-image="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-02-24-023938.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/ndk/"><img class="prev-cover" src="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-02-25-094138.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">安卓NDK开发</div></div></a></div><div class="next-post pull-right"><a href="/neiwangchuangtou/"><img class="next-cover" src="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-02-24-021243.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">一行命令内网穿透</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/avatar.jpeg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Kevin</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/kevinspider"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/kevinspider" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:zhangyang.spider@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#google-%E7%B3%BB%E7%BB%9F%E9%95%9C%E5%83%8F"><span class="toc-number">1.</span> <span class="toc-text">google 系统镜像</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#sdk-%E5%B7%A5%E5%85%B7%E5%8C%85"><span class="toc-number">2.</span> <span class="toc-text">sdk 工具包</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#twrp-%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7"><span class="toc-number">3.</span> <span class="toc-text">twrp 管理工具</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SuperSU"><span class="toc-number">4.</span> <span class="toc-text">SuperSU</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Magisk"><span class="toc-number">5.</span> <span class="toc-text">Magisk</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#apktool"><span class="toc-number">6.</span> <span class="toc-text">apktool</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#wifiADB"><span class="toc-number">7.</span> <span class="toc-text">wifiADB</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E5%8D%93%E7%B3%BB%E7%BB%9F%E8%AE%BE%E7%BD%AE"><span class="toc-number">8.</span> <span class="toc-text">安卓系统设置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#wifi-%E6%98%BE%E7%A4%BA%E9%94%99%E8%AF%AF"><span class="toc-number">8.1.</span> <span class="toc-text">wifi 显示错误</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#frida-frida-tools-objection-%E7%89%88%E6%9C%AC"><span class="toc-number">9.</span> <span class="toc-text">frida frida-tools objection 版本</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#BurpSuite-%E7%A0%B4%E8%A7%A3%E7%89%88"><span class="toc-number">10.</span> <span class="toc-text">BurpSuite 破解版</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#brook"><span class="toc-number">11.</span> <span class="toc-text">brook</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#010editor-%E8%BF%87%E6%9C%9F%E5%A4%84%E7%90%86"><span class="toc-number">12.</span> <span class="toc-text">010editor 过期处理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#miniconda"><span class="toc-number">13.</span> <span class="toc-text">miniconda</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#charles-%E7%A0%B4%E8%A7%A3%E7%89%88"><span class="toc-number">14.</span> <span class="toc-text">charles 破解版</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#fastboot"><span class="toc-number">15.</span> <span class="toc-text">fastboot</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#android-%E7%B3%BB%E7%BB%9F%E5%88%B7%E6%9C%BA%E6%95%99%E7%A8%8B"><span class="toc-number">16.</span> <span class="toc-text">android 系统刷机教程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#charles-%E6%8A%93%E5%8C%85"><span class="toc-number">17.</span> <span class="toc-text">charles 抓包</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#kali-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-number">18.</span> <span class="toc-text">kali 环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#kali-root"><span class="toc-number">18.1.</span> <span class="toc-text">kali root</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#kali-%E8%AE%BE%E7%BD%AE%E6%97%B6%E5%8C%BA"><span class="toc-number">18.2.</span> <span class="toc-text">kali 设置时区</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#kali-%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6"><span class="toc-number">18.3.</span> <span class="toc-text">kali 常用软件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-jnetop-htop-tree"><span class="toc-number">18.3.1.</span> <span class="toc-text">安装 jnetop htop tree</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#kali-%E6%8D%A2%E6%BA%90"><span class="toc-number">18.4.</span> <span class="toc-text">kali 换源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#kali-%E9%9D%9E-root-%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8-adb"><span class="toc-number">18.5.</span> <span class="toc-text">kali 非 root 用户使用 adb</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/arm/" title="arm"><img src="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-02-19-091014.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="arm"/></a><div class="content"><a class="title" href="/arm/" title="arm">arm</a><time datetime="2021-03-22T11:45:16.000Z" title="发表于 2021-03-22 19:45:16">2021-03-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/101fudao/" title="101辅导"><img src="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-03-15-084433.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="101辅导"/></a><div class="content"><a class="title" href="/101fudao/" title="101辅导">101辅导</a><time datetime="2021-03-22T11:44:04.000Z" title="发表于 2021-03-22 19:44:04">2021-03-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/tiejia/" title="铁甲"><img src="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-03-15-080211.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="铁甲"/></a><div class="content"><a class="title" href="/tiejia/" title="铁甲">铁甲</a><time datetime="2021-03-22T11:43:07.000Z" title="发表于 2021-03-22 19:43:07">2021-03-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/baobaoshu/" title="宝宝树孕育"><img src="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-03-15-034223.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="宝宝树孕育"/></a><div class="content"><a class="title" href="/baobaoshu/" title="宝宝树孕育">宝宝树孕育</a><time datetime="2021-03-22T11:42:23.000Z" title="发表于 2021-03-22 19:42:23">2021-03-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/git/" title="git"><img src="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-03-15-032134.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="git"/></a><div class="content"><a class="title" href="/git/" title="git">git</a><time datetime="2021-03-22T11:40:25.000Z" title="发表于 2021-03-22 19:40:25">2021-03-22</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Kevin</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk({
+      clientID: 'b0219907dd46555f039c',
+      clientSecret: 'e5a47d823fcb4176c4815acb018ac409789757e6',
+      repo: 'kevinspider.github.io',
+      owner: 'kevinspider',
+      admin: [''],
+      id: 'c84bab879af065313e7ea7429651b250',
+      language: 'en',
+      perPage: 10,
+      distractionFreeMode: false,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      updateCountCallback: commentCount
+    })
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !true) {
+  if (true) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div></div></body></html>

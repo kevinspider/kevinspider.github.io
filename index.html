@@ -1,0 +1,261 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>凡墙总是门</title><meta name="keywords" content="安卓,逆向,android,arm,抓包"><meta name="author" content="Kevin"><meta name="copyright" content="Kevin"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
+<meta property="og:title" content="凡墙总是门">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="凡墙总是门">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/avatar.jpeg">
+<meta property="article:author" content="Kevin">
+<meta property="article:tag" content="安卓,逆向,android,arm,抓包">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/avatar.jpeg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-03-23 13:46:52'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/avatar.jpeg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-03-23-051441.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">凡墙总是门</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">凡墙总是门</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/kevinspider" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:zhangyang.spider@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/arm/" title="arm">     <img class="post_bg" src="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-02-19-091014.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="arm"></a></div><div class="recent-post-info"><a class="article-title" href="/arm/" title="arm">arm</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-03-22T11:45:16.000Z" title="发表于 2021-03-22 19:45:16">2021-03-22</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/so/">so</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/arm/">arm</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/so/">so</a></span></div><div class="content">arm 可执行程序生成过程环境准备编写hello.c 文件
+1234567#include &lt;stdio.h&gt;int main(int argc, char const *argv[])&#123;    printf(&quot;hello arm!\n&quot;);    return 0;&#125;
+
+mac 自带的 clang 编译, 如果使用默认的 clang 进行编译clang _01helloworld.c -o hello_mac
+使用 file 查看, 编译的结果为Mach-O 64-bit executable x86_6
+需要使用 ndk 中的 clang 进行编译; 可以直接使用 android studio 自带的 ndk 中的 clang 命令进行编译;
+
+将 clang 添加到环境变量, 方便使用
+1234alias arm&#x3D;&#39;export PATH&#x3D;&quot;&#x2F;Users&#x2F;zhangyang&#x2F;Library&#x2F;Android&#x2F;sdk&#x2F;ndk&#x2F; ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/101fudao/" title="101辅导">     <img class="post_bg" src="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-03-15-084433.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="101辅导"></a></div><div class="recent-post-info"><a class="article-title" href="/101fudao/" title="101辅导">101辅导</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-03-22T11:44:04.000Z" title="发表于 2021-03-22 19:44:04">2021-03-22</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/demo/">demo</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/demo/">demo</a></span></div><div class="content">INFOapp: 101辅导包名: com.chinaedu.blessonstu版本: 1.8.5
+分析直接搜索 “signature” 定位到关键代码com.chinaedu.http.interceptor.SHA1EncryptInterceptor;
+该类是一个interceptor , 通过 addInterceptor方法添加到 OkHttpClient 中;
+1234567891011121314151617181920212223242526272829303132///&lt;reference path=&#x27;./index.d.ts&#x27;/&gt;function hook()&#123;    Java.perform(function()&#123;        console.log(&quot;执行 -&gt; &quot;,&quot;hook&quot;);        var Sha1Clazz = Java.use(&quot;com.chinaedu.blessonstu.utils.SHA1Utils&quot;);      ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/tiejia/" title="铁甲">     <img class="post_bg" src="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-03-15-080211.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="铁甲"></a></div><div class="recent-post-info"><a class="article-title" href="/tiejia/" title="铁甲">铁甲</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-03-22T11:43:07.000Z" title="发表于 2021-03-22 19:43:07">2021-03-22</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/demo/">demo</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/demo/">demo</a></span></div><div class="content">INFOapp: 铁甲包名: com.cehome.cehomebbs版本: 3.9.9.0
+分析使用关键词搜索 “token” 可以直接定位到关键代码 cehome.sdk.utils.AesUtil.getSystemHeader定位到关键代码, 使用了 Aes 进行加密; 进入该方法可以看到使用的标准的加密:
+
+加密内容: “cehomeapp@” + uuid
+key: j33$E@GctUXJtVfO
+ECB/PKCS5Padding
+
+python 实现AesEcb
+123456789101112131415161718192021from typing import Mappingfrom Crypto.Cipher import AESfrom Crypto.Util import Paddingfrom base64 import b64encode, b64decodedef aes_ecb_pkcs7_b64_encrypt(data, key):    data = Padding.pad(data.encode(&#x27;utf-8&#x27;), AES. ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/baobaoshu/" title="宝宝树孕育">     <img class="post_bg" src="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-03-15-034223.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="宝宝树孕育"></a></div><div class="recent-post-info"><a class="article-title" href="/baobaoshu/" title="宝宝树孕育">宝宝树孕育</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-03-22T11:42:23.000Z" title="发表于 2021-03-22 19:42:23">2021-03-22</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/demo/">demo</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/demo/">demo</a></span></div><div class="content">INFOapp: com.babytree.apps.pregnancyname: 宝宝树孕育version: 8.31.0
+脱壳测试过程中发现, 使用 objection 进行 dexdump 比使用 python 中 dexdump 更加稳定;objection -g com.babytree.apps.pregnancy exploreplugin load /Users/zhangyang/.objection/plugins/dexdumpplugin dexdump dump
+合并 dex脱壳 dump 下来的 dex 文件存放在 ~/packageName 下, dex2apk进行合并 dex 文件;mkdir sourcemv *.dex ./sourcepython dex2apk.py -a ./baobaoshu.apk -i sourcejadx-gui repacked.apk
+分析直接搜索 “signature” 可以快速定位到加密位置:或者通过观察加密字段的特征, 使用 md5 反向定位 hookmd5定位到关键加密位置: com.meitun.mama. ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/git/" title="git">     <img class="post_bg" src="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-03-15-032134.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="git"></a></div><div class="recent-post-info"><a class="article-title" href="/git/" title="git">git</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-03-22T11:40:25.000Z" title="发表于 2021-03-22 19:40:25">2021-03-22</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/others/">others</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/others/">others</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/git/">git</a></span></div><div class="content">
+
+workspace: 工作区
+index/stage: 暂存区
+repository: 仓库区(本地仓库)
+remote: 远程仓库
+
+新建代码库12345678# 在当前目录新建一个Git代码库$ git init# 新建一个目录，将其初始化为Git代码库$ git init [project-name]# 下载一个项目和它的整个代码历史$ git clone [url]
+
+配置Git 的配置文件为 .gitconfig, 可以在用户主目录下(全局配置), 也可以在项目目录下(项目配置);
+123456789# 显示当前的Git配置$ git config --list# 编辑Git配置文件$ git config -e [--global]# 设置提交代码时的用户信息$ git config [--global] user.name &quot;[name]&quot;$ git config [--global] user.email &quot;[email address]&quot;
+
+增加/删除文件123456789101112131415161718192021#  ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/dex2apk/" title="dex2apk">     <img class="post_bg" src="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-03-12-092645.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="dex2apk"></a></div><div class="recent-post-info"><a class="article-title" href="/dex2apk/" title="dex2apk">dex2apk</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-03-22T11:39:33.000Z" title="发表于 2021-03-22 19:39:33">2021-03-22</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/others/">others</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/others/">others</a></span></div><div class="content">使用脱壳工具脱下来的 dex 合并成 apk; 直接拖入 jadx-gui 中查看针对之前出现的某些 dex 格式错误, 导致重新打包之后会出现 jadx-gui 无法打开的问题;
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100import osimport zipfileimport argparsedef rename_class(path):   files = os.listdir(path)   dex_index = 0   if path.endswith(&#x27;/&#x27;):       path = path[:-1]       print(path)   for i in range(len(files)):        ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/benlaishenghuo/" title="本来生活">     <img class="post_bg" src="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-03-11-115531.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="本来生活"></a></div><div class="recent-post-info"><a class="article-title" href="/benlaishenghuo/" title="本来生活">本来生活</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-03-22T11:38:25.000Z" title="发表于 2021-03-22 19:38:25">2021-03-22</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/demo/">demo</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/demo/">demo</a></span></div><div class="content">INFOapp: com.android.benlailife.activityname: 本来生活version: 5.7.1
+脱壳frida-dexdump dumpgrep -grep -rnli &quot;mainactivity&quot; ./找到目标 dex 文件, 使用 jadx-gui 打开
+分析sign 参数直接全局搜索 “sign” 很容易定位到 com.android.benlai.request.basic.c 中的 createSign方法;
+
+对输入的 map 根据键进行排序
+遍历排序结果拼接成字符串
+字符串末位添加 salt : benlai
+调用 u.a方法, 进入之后看到就是一个标准的 md5, 然后将 md5 的结果转成大写
+
+Authorization清空 app 的缓存, 抓包发现在启动的较早时机会发出一个 https://api.benlai.com/v5/token 的请求; 此时的 Authorization 是一个定值; 写死或者通过 hook 获取都可以
+123var CredentialsClazz = Java.use(&quo ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/zhuabao/" title="frida 抓包">     <img class="post_bg" src="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-03-03-033059.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="frida 抓包"></a></div><div class="recent-post-info"><a class="article-title" href="/zhuabao/" title="frida 抓包">frida 抓包</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-03-22T11:37:03.000Z" title="发表于 2021-03-22 19:37:03">2021-03-22</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/frida/">frida</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E6%8A%93%E5%8C%85/">抓包</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/frida/">frida</a></span></div><div class="content">Https 中间人抓包高版本安卓系统如何导入证书
+magisk - Move Certificates 模块
+
+Aosp 直接将证书编译到系统中 参考链接
+
+re 管理器
+
+命令行
+charles导出.cer证书，选择.cer类型 保存在pc上
+
+修改证书名称系统证书目录：/system/etc/security/cacerts/其中的每个证书的命名规则如下：.文件名是一个Hash值，而后缀是一个数字。文件名可以用下面的命令计算出来：openssl x509 -subject_hash_old -in 后缀名的数字是为了防止文件名冲突的，比如如果两个证书算出的Hash值是一样的话，那么一个证书的后缀名数字可以设置成0，而另一个证书的后缀名数字可以设置成1
+复制证书到设备上adb push xxxxxxx.0 /sdcard/
+复制到系统目录并修改权限（安卓8.1.0 Magisk Root）mount -o rw,remount /system 【不修改 没法写入】mount -o rw,remount /mv /sdcard/xxxxxxx.0 /etc/security/cacer ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/fridaollvm/" title="frida ollvm">     <img class="post_bg" src="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-03-02-075427.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="frida ollvm"></a></div><div class="recent-post-info"><a class="article-title" href="/fridaollvm/" title="frida ollvm">frida ollvm</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-03-22T11:34:42.000Z" title="发表于 2021-03-22 19:34:42">2021-03-22</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/frida/">frida</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/frida/">frida</a><span class="article-meta__link">•</span><a class="article-meta__tags" href="/tags/ollvm/">ollvm</a></span></div><div class="content">ollvm 字符串混淆ollvm 默认字符串混淆特征:
+
+export 中存在 .datadiv_decode 字样的函数
+
+点击进入这些函数可以看到大量异或操作
+
+
+ollvm 字符串混淆, 在静态的时候无法看到字符串, 执行起来先调用 .init_array 里面的函数解密字符串, 解密之后内存中的字符串是明文状态
+
+
+hook 代码:
+找到混淆了的字符串对应在 .data 数据段的地址, hook 该地址并进行打印即可获取到明文
+将 RegisterNative 对应的 methods 结构体找出来, 并使用 ida 转换成指针 DCQ 找到对应的位置
+
+跳转过去就是对应的函数体的起始位置 .data 段 0x37070, 打印即可;
+
+12345function printbytestring(byteaddr)&#123;    var base_addr = Module.findBaseAddress(&quot;libhello-jni.so&quot;);    console.log(&quot;base_addr &quot;, base_addr);    co ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/fridahookso/" title="frida hook so">     <img class="post_bg" src="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-02-26-065402.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="frida hook so"></a></div><div class="recent-post-info"><a class="article-title" href="/fridahookso/" title="frida hook so">frida hook so</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2021-03-22T11:30:36.000Z" title="发表于 2021-03-22 19:30:36">2021-03-22</time></span><span class="article-meta"><span class="article-meta__separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/frida/">frida</a></span><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/frida/">frida</a></span></div><div class="content">frida envhttps://github.com/frida/frida-java-bridge/blob/master/lib/env.js
+安装 apk 指定 32 位和 64 位12adb install --abi armeabi-v7a &lt;apk path&gt;  # 32位下运行adb install --abi arm64-v8a &lt;apk path&gt;    # 64位下运行
+
+IDA 判断 Thumb 指令集和 Arm 指令集
+IDA - Options - General - number of opcode bytes - 设置为 4
+此时查看 IDA VIew 中 opcode 的长度, 如果出现 2 个字节和 4 个字节的, 说明为 thumb 指令集
+如果都是 4 个字节的, 说明是 arm 指令集;
+在 Thumb 指令集下, inline hook 的偏移地址需要进行 +1 操作;
+
+枚举内存中的 so 文件用于查看目标 module 是否被正常加载, 使用 Process.enumerateModules() 将当前加载的所有  ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/avatar.jpeg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Kevin</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/kevinspider"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/kevinspider" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:zhangyang.spider@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/arm/" title="arm"><img src="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-02-19-091014.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="arm"/></a><div class="content"><a class="title" href="/arm/" title="arm">arm</a><time datetime="2021-03-22T11:45:16.000Z" title="发表于 2021-03-22 19:45:16">2021-03-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/101fudao/" title="101辅导"><img src="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-03-15-084433.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="101辅导"/></a><div class="content"><a class="title" href="/101fudao/" title="101辅导">101辅导</a><time datetime="2021-03-22T11:44:04.000Z" title="发表于 2021-03-22 19:44:04">2021-03-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/tiejia/" title="铁甲"><img src="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-03-15-080211.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="铁甲"/></a><div class="content"><a class="title" href="/tiejia/" title="铁甲">铁甲</a><time datetime="2021-03-22T11:43:07.000Z" title="发表于 2021-03-22 19:43:07">2021-03-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/baobaoshu/" title="宝宝树孕育"><img src="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-03-15-034223.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="宝宝树孕育"/></a><div class="content"><a class="title" href="/baobaoshu/" title="宝宝树孕育">宝宝树孕育</a><time datetime="2021-03-22T11:42:23.000Z" title="发表于 2021-03-22 19:42:23">2021-03-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/git/" title="git"><img src="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-03-15-032134.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="git"/></a><div class="content"><a class="title" href="/git/" title="git">git</a><time datetime="2021-03-22T11:40:25.000Z" title="发表于 2021-03-22 19:40:25">2021-03-22</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/demo/"><span class="card-category-list-name">demo</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/env/"><span class="card-category-list-name">env</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/frida/"><span class="card-category-list-name">frida</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/objection/"><span class="card-category-list-name">objection</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/others/"><span class="card-category-list-name">others</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/so/"><span class="card-category-list-name">so</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/xposed/"><span class="card-category-list-name">xposed</span><span class="card-category-list-count">1</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/arm/" style="font-size: 1.1em; color: #999">arm</a> <a href="/tags/demo/" style="font-size: 1.5em; color: #99a9bf">demo</a> <a href="/tags/dexdump/" style="font-size: 1.1em; color: #999">dexdump</a> <a href="/tags/env/" style="font-size: 1.1em; color: #999">env</a> <a href="/tags/frida/" style="font-size: 1.5em; color: #99a9bf">frida</a> <a href="/tags/git/" style="font-size: 1.1em; color: #999">git</a> <a href="/tags/ndk/" style="font-size: 1.1em; color: #999">ndk</a> <a href="/tags/objection/" style="font-size: 1.1em; color: #999">objection</a> <a href="/tags/ollvm/" style="font-size: 1.1em; color: #999">ollvm</a> <a href="/tags/others/" style="font-size: 1.37em; color: #99a4b2">others</a> <a href="/tags/so/" style="font-size: 1.23em; color: #999ea6">so</a> <a href="/tags/wallbreaker/" style="font-size: 1.1em; color: #999">wallbreaker</a> <a href="/tags/xposed/" style="font-size: 1.1em; color: #999">xposed</a> <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="font-size: 1.1em; color: #999">内网穿透</a> <a href="/tags/%E6%8A%93%E5%8C%85/" style="font-size: 1.1em; color: #999">抓包</a></div></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">16</div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2021-03-23T05:46:52.350Z"></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Kevin</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function subtitleType () {
+  fetch('https://api.btstu.cn/yan/api.php?charset=utf-8&encode=json')
+    .then(response => response.json())
+    .then(data => {
+      if (true) {
+        var sub = "".length == 0 ? new Array() : "".split(',')
+        var both = sub.unshift(data.text)
+        typed = new Typed('#subtitle', {
+          strings: sub,
+          startDelay: 300,
+          typeSpeed: 150,
+          loop: true,
+          backSpeed: 50,
+        })
+      } else {
+        document.getElementById('subtitle').innerHTML = data.text
+      }
+    })
+}
+
+if (true) {
+  if (typeof Typed === 'function') {
+    subtitleType()
+  } else {
+    getScript('https://cdn.jsdelivr.net/npm/typed.js/lib/typed.min.js').then(subtitleType)
+  }
+} else {
+  subtitleType()
+}
+</script></div></div></body></html>
