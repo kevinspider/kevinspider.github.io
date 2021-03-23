@@ -1356,7 +1356,7 @@ input::placeholder {
   z-index: -999;
   width: 100%;
   height: 100%;
-  background: url(https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-03-23-051441.jpg);
+  background: url(https://cdn.jsdelivr.net/gh/jerryc127/butterfly_cdn@2.1.0/top_img/index.jpg);
   background-attachment: local;
   background-position: center;
   -webkit-background-size: cover;
