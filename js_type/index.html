@@ -1,0 +1,510 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>数据类型 | 凡墙总是门</title><meta name="keywords" content="js基础"><meta name="author" content="Kevin"><meta name="copyright" content="Kevin"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="数据类型在 js 中所有的值都可以用下列的 7 种数据类型进行表示; es 中有 6 种原始数据类型:   Undefined  Null  Boolean  Number  String  Symbol (es6 中新增)  es 中有 1 种复杂的数据类型:   Object: 一种无序的键值对的集合;   typeOf 操作符typeOf 操作符是用来确定任意数据的数据类型, 对任意一个数据">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据类型">
+<meta property="og:url" content="http://example.com/js_type/index.html">
+<meta property="og:site_name" content="凡墙总是门">
+<meta property="og:description" content="数据类型在 js 中所有的值都可以用下列的 7 种数据类型进行表示; es 中有 6 种原始数据类型:   Undefined  Null  Boolean  Number  String  Symbol (es6 中新增)  es 中有 1 种复杂的数据类型:   Object: 一种无序的键值对的集合;   typeOf 操作符typeOf 操作符是用来确定任意数据的数据类型, 对任意一个数据">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-06-30-032545.jpg">
+<meta property="article:published_time" content="2021-06-30T07:40:34.000Z">
+<meta property="article:modified_time" content="2021-07-02T02:28:26.621Z">
+<meta property="article:author" content="Kevin">
+<meta property="article:tag" content="js基础">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-06-30-032545.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/js_type/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><meta name="baidu-site-verification" content="T0kgJCNqdP"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-07-02 10:28:26'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/avatar.jpeg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">30</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">19</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-06-30-032545.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">凡墙总是门</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">数据类型</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-06-30T07:40:34.000Z" title="发表于 2021-06-30 15:40:34">2021-06-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-07-02T02:28:26.621Z" title="更新于 2021-07-02 10:28:26">2021-07-02</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/js%E5%9F%BA%E7%A1%80/">js基础</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>在 js 中所有的值都可以用下列的 7 种数据类型进行表示;</p>
+<p>es 中有 6 种原始数据类型:</p>
+<ol>
+<li> Undefined</li>
+<li> Null</li>
+<li> Boolean</li>
+<li> Number</li>
+<li> String</li>
+<li> Symbol (es6 中新增)</li>
+</ol>
+<p>es 中有 1 种复杂的数据类型:</p>
+<ol>
+<li> Object: 一种无序的键值对的集合;</li>
+</ol>
+<hr>
+<h3 id="typeOf-操作符"><a href="#typeOf-操作符" class="headerlink" title="typeOf 操作符"></a>typeOf 操作符</h3><p><code>typeOf</code> 操作符是用来确定任意数据的数据类型, 对任意一个数据使用操作符返回的结果为:</p>
+<ol>
+<li> “undefined”: 未定义</li>
+<li> “boolean”: bool 类型</li>
+<li> “string”: 字符串</li>
+<li> “number”: 数值</li>
+<li> “object”: 对象(而不是函数) 或者 null;</li>
+<li> “function”: 函数</li>
+<li> “symbol” : 符号</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> message = <span class="string">&quot;some string&quot;</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;message&quot;</span>, <span class="keyword">typeof</span> (message)); <span class="comment">// string</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHi</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;cool&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;sayHi&quot;</span>, <span class="keyword">typeof</span> (sayHi)); <span class="comment">// function</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> number = <span class="number">10</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;number&quot;</span>, <span class="keyword">typeof</span> (number)); <span class="comment">// number</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> flag = <span class="literal">true</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;flag&quot;</span>, <span class="keyword">typeof</span> (flag)); <span class="comment">// boolean</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> age;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;age&quot;</span>, <span class="keyword">typeof</span> (age)); <span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> none = <span class="literal">null</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;none&quot;</span>, <span class="keyword">typeof</span> (none)); <span class="comment">// 特殊值 null 被认为是一个空对象的引用, 所以 typeof 为 Object</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> obj = &#123;<span class="string">&quot;name&quot;</span>: <span class="string">&quot;kevin&quot;</span>, <span class="string">&quot;age&quot;</span>: <span class="number">29</span>&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;obj&quot;</span>, <span class="keyword">typeof</span> (obj)); <span class="comment">// object</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> sym = <span class="built_in">Symbol</span>(<span class="string">&quot;hi&quot;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;sym&quot;</span>, <span class="keyword">typeof</span> sym); <span class="comment">// symbol</span></span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<h3 id="Undefined-类型"><a href="#Undefined-类型" class="headerlink" title="Undefined 类型"></a>Undefined 类型</h3><p>Undefined 类型只有一个值, 就是特殊值 <code>undefined</code>; 当使用 var 或者 let 对变量进行声明的时候, 如果没有对变量进行赋值, 那么变量默认就是<code>undefined</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> message;</span><br><span class="line"><span class="built_in">console</span>.log(message); <span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> name = <span class="literal">undefined</span>;</span><br><span class="line"><span class="built_in">console</span>.log(name); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+
+<p>undefined 和 null 可以区分一个变量是一个空指针对象(null) 还是一个未初始化的变量; null  –&gt;  空指针对象  –&gt;  Obejct; undefined  –&gt;  未初始化的变量;</p>
+<hr>
+<h3 id="Null-类型"><a href="#Null-类型" class="headerlink" title="Null 类型"></a>Null 类型</h3><p>Null 类型同样只有一个值, 就是特殊值 null; 逻辑上讲, null 值表示一个空指针对象, 所以对一个 null 变量使用 typeOf 操作符会返回一个 object;</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> car = <span class="literal">null</span>;</span><br><span class="line"><span class="built_in">console</span>.log(typeOf(car)); <span class="comment">// obejct</span></span><br></pre></td></tr></table></figure>
+
+<p>在声明一个未来要保存对象的变量时, 推荐初始化的时候赋值 null, 因为这样在之后只需要检测这个变量的值是不是 null 就可以知道这个变量在后面是否被成功赋予了一个对象的引用;</p>
+<h3 id="Boolean-类型"><a href="#Boolean-类型" class="headerlink" title="Boolean 类型"></a>Boolean 类型</h3><p>Boolean 类型只有两个值, true 和 false</p>
+<p>所有其他类型的值都可以通过 Boolean() 等价形式转换成 Boolean 类型; </p>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>转换为 true</th>
+<th>转换为 false</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Boolean</td>
+<td>true</td>
+<td>false</td>
+</tr>
+<tr>
+<td>String</td>
+<td>非空字符串</td>
+<td>“”空字符串</td>
+</tr>
+<tr>
+<td>Number</td>
+<td>非 0 数值</td>
+<td>0, NaN</td>
+</tr>
+<tr>
+<td>Object</td>
+<td>任意对象</td>
+<td>null</td>
+</tr>
+<tr>
+<td>Undefined</td>
+<td>不存在, 永远无法为 true</td>
+<td>undefined</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="Number-类型"><a href="#Number-类型" class="headerlink" title="Number 类型"></a>Number 类型</h3><p>es 中 Number 类型可以表示整数和浮点数</p>
+<h4 id="十进制-八进制和十六进制"><a href="#十进制-八进制和十六进制" class="headerlink" title="十进制, 八进制和十六进制"></a>十进制, 八进制和十六进制</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 十进制</span></span><br><span class="line"><span class="keyword">let</span> num1 = <span class="number">10</span>; </span><br><span class="line"></span><br><span class="line"><span class="comment">// 八进制</span></span><br><span class="line"><span class="keyword">let</span> num2 = <span class="number">070</span>; </span><br><span class="line"></span><br><span class="line"><span class="comment">// 十六进制</span></span><br><span class="line"><span class="keyword">let</span> num3 = <span class="number">0xA</span>;</span><br><span class="line"><span class="keyword">let</span> num4 = <span class="number">0XA</span>; </span><br></pre></td></tr></table></figure>
+
+<h4 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h4><p>在 es 中, 定义浮点数必须包含小数点, 而且小数点后面至少有一个数字; 虽然小数点前面可以不要求有整数, 但是推荐还是加上;</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> num1 = <span class="number">1.1</span>;</span><br><span class="line"><span class="keyword">let</span> num2 = <span class="number">0.1</span>;</span><br><span class="line"><span class="keyword">let</span> num3 = <span class="number">.1</span> <span class="comment">// 合法 不推荐</span></span><br></pre></td></tr></table></figure>
+
+<p>在小数点后面没有数字的情况下, 浮点数会直接被转换成整数; 在小数点后面是 0 的情况下, 也会直接转换成整数;</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 都会被自动转换成整数</span></span><br><span class="line"><span class="keyword">let</span> num = <span class="number">1.</span>; </span><br><span class="line"><span class="keyword">let</span> num2 = <span class="number">10.0</span>; </span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="科学计数法"><a href="#科学计数法" class="headerlink" title="科学计数法"></a>科学计数法</h4><p>科学计数法的写法为 : <code>数值(整数或者浮点数) + e or E + 乘以 10 的多少次幂</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> num = <span class="number">2.123e4</span>;</span><br><span class="line"><span class="keyword">let</span> num=  <span class="number">3e-2</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="浮点数精度"><a href="#浮点数精度" class="headerlink" title="浮点数精度"></a>浮点数精度</h4><p>在 js 中, 浮点数精度运算非常诡异, 不要检测某个特定的浮点数值;</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">0.1</span>;</span><br><span class="line"><span class="keyword">let</span> b = <span class="number">0.2</span>;</span><br><span class="line"><span class="keyword">if</span> (a + b == <span class="number">0.3</span>)&#123; <span class="comment">// 这样判断, 很可能不成立</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;you get 0.3&quot;</span>) </span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;精度真的有很大问题&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="值的范围"><a href="#值的范围" class="headerlink" title="值的范围"></a>值的范围</h4><p>最大值保存在 Number.MAX_VALUE 中, 最小值保存在 Number.MIN_VALUE 中; </p>
+<p>如果超过了最大值则会自动转成正无穷 <code>Infinity</code>; 超过了最小值会转成负无穷 <code>-Infinity</code>;</p>
+<p>正无穷和负无穷都不能再进行任何计算, 参与计算结果也是正无穷或者负无穷;</p>
+<p>可以使用 <code>isFinite()</code>检测某个变量是否是有限数, 有限数返回 true, 无穷数返回 false</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> result = <span class="built_in">Number</span>.MAX_VALUE + <span class="built_in">Number</span>.MIN_VALUE;</span><br><span class="line">consoel.log(ifFinite(result)); <span class="comment">// true 是有限数字</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>.MAX_VALUE); <span class="comment">// 1.7976931348623157e+308</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>.MIN_VALUE); <span class="comment">// 5e-324</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isFinite</span>(<span class="literal">Infinity</span>)); <span class="comment">// false 不是有限数字</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="NaN"><a href="#NaN" class="headerlink" title="NaN"></a>NaN</h4><p>NaN 是一个特殊的数值, 表示的是<code>不是数值</code>; 用于表示本来要返回数值的操作, 但是失败了;  比如, 用 0 除任何数在其他语言中会直接导致错误, 但是在 ES 中, 0, +0, -0 或者 NaN 都有可能是返回值;</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;0/0&quot;</span>, <span class="number">0</span> / <span class="number">0</span>); <span class="comment">// NaN</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;-0/+0&quot;</span>, -<span class="number">0</span> / +<span class="number">0</span>); <span class="comment">// NaN</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果分子是非 0 值, 分母是有符号 0 或者无符号 0, 那么返回 -Infinity 或者 Infinity</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;5/0&quot;</span>, <span class="number">5</span> / <span class="number">0</span>); <span class="comment">// Infinity</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;5/-0&quot;</span>, <span class="number">5</span> / -<span class="number">0</span>); <span class="comment">// -Infinity</span></span><br></pre></td></tr></table></figure>
+
+<p>任何涉及到 NaN 的计算, 最终的结果都是 NaN</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 任何涉及 NaN 的运算返回的始终是 NaN</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;NaN/10+100+200-33&quot;</span>, <span class="literal">NaN</span> / <span class="number">10</span> + <span class="number">100</span> + <span class="number">200</span> - <span class="number">33</span>); <span class="comment">// NaN</span></span><br></pre></td></tr></table></figure>
+
+<p>js 中提供了函数<code>isNaN()</code>来检测传入的参数是否是数值类型, 如果传入的参数可以转换成合法的数值, 那么返回 true, 否则返回 false; </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(<span class="literal">NaN</span>)); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(<span class="number">10</span>)); <span class="comment">// false 10是数值</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(<span class="string">&quot;10&quot;</span>)) <span class="comment">// false 可以转换成数值 10;</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(<span class="string">&quot;blue&quot;</span>)); <span class="comment">// true 不能转换成数值</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(<span class="literal">true</span>)); <span class="comment">// false 可以转换成数值 1</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Number"><a href="#Number" class="headerlink" title="Number()"></a>Number()</h4><p><code>Number()</code>是转型函数, 可以将任意数据类型转成数值;</p>
+<ol>
+<li><p> 布尔值: true 转成 1, false 转成 0;</p>
+</li>
+<li><p> 数值: 直接返回</p>
+</li>
+<li><p> null: 返回 0</p>
+</li>
+<li><p> undefined: 返回 NaN;</p>
+</li>
+<li><p>字符串</p>
+<ol>
+<li> 字符串中为合法数值, 包括字符前面的加减号, 直接转成含有符号十进制数值(+忽略);</li>
+<li> 字符串中以 0 开头的合法八进制, 直接忽略 0, 转成十进制数;</li>
+<li> 字符串中以 0x 和 0X 开头的合法十六进制数, 转成对应的十进制数;</li>
+<li> 字符串中以合法的浮点数, 则直接转换成对应的浮点数;</li>
+<li> 如果是空字符串, 则转为 0</li>
+<li>如果字符串中的内容不是合法数值, 则返回 NaN;</li>
+</ol>
+</li>
+<li><p>对象</p>
+<ol>
+<li><p> 先调用<code>valueOf()</code>方法, 按照上面的规则进行转换, 如果转换的结果是 NaN, 则进行下一步参照 2</p>
+</li>
+<li><p>再调用<code>toString()</code>方法将对象转成字符串, 再按照字符串转换成 Number 的规则进行转换;</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> num = <span class="built_in">Number</span>(<span class="string">&quot;hello world&quot;</span>); <span class="comment">// NaN</span></span><br><span class="line"><span class="keyword">let</span> num1 = <span class="built_in">Number</span>(<span class="string">&quot;&quot;</span>); <span class="comment">// 0</span></span><br><span class="line"><span class="keyword">let</span> num2 = <span class="built_in">Number</span>(<span class="string">&quot;00001&quot;</span>); <span class="comment">// 1</span></span><br><span class="line"><span class="keyword">let</span> num3 = <span class="built_in">Number</span>(<span class="literal">true</span>); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+</ol>
+<h4 id="parseInt"><a href="#parseInt" class="headerlink" title="parseInt()"></a>parseInt()</h4><p>主要用于将字符串转成数值, 推荐优先使用该方法进行转换;</p>
+<ol>
+<li><p> 浮点数, 仅保留整数</p>
+</li>
+<li><p>字符串:</p>
+<ol>
+<li><p> 字符串前面的空格会被忽略, 从第一个非空格字符串开始转换;</p>
+</li>
+<li><p> 如果第一个有效字符不是+,-或者有效数值, 那么会直接返回 NaN;</p>
+</li>
+<li><p> 空字符进行转换的时候会直接返回 NaN;</p>
+</li>
+<li><p>如果开始是有效的数值或者+,-; 则会依次进行转换, 后面遇到无效字符则截断, 仅转换有效部分; </p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> num = <span class="string">&quot;123blue&quot;</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(num)); <span class="comment">// 123</span></span><br></pre></td></tr></table></figure></li>
+<li><p>小数点也是无效字符, 所以转换的时候如果是浮点数, 则仅保留整数部分</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> num = <span class="number">12.33</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">parseInt</span>(num)); <span class="comment">// 12</span></span><br></pre></td></tr></table></figure></li>
+<li><p> 如果字符串是<code>0x</code>开头, 则会被转换为十六进制; </p>
+</li>
+<li><p> 如果字符是<code>0</code>开头, 且后面紧跟数值, 在非严格模式下会被某些实现解释成八进制整数;</p>
+</li>
+</ol>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> num1 = <span class="built_in">parseInt</span>(<span class="string">&quot;123blue&quot;</span>); <span class="comment">// 123</span></span><br><span class="line"><span class="keyword">let</span> num2 = <span class="built_in">parseInt</span>(<span class="string">&quot;&quot;</span>) <span class="comment">// NaN 如果使用 Number(&quot;&quot;)则返回 0</span></span><br><span class="line"><span class="keyword">let</span> num3 = <span class="built_in">parseInt</span>(<span class="string">&quot;0xA&quot;</span>); <span class="comment">// 10 解释为十六进制的整数</span></span><br><span class="line"><span class="keyword">let</span> num4 = <span class="built_in">parseInt</span>(<span class="number">22.5</span>); <span class="comment">// 22</span></span><br><span class="line"><span class="keyword">let</span> num5 = <span class="built_in">parseInt</span>(<span class="string">&quot;70&quot;</span>) <span class="comment">// 70</span></span><br><span class="line"><span class="keyword">let</span> num6 = <span class="built_in">parseInt</span>(<span class="string">&quot;0xf&quot;</span>) <span class="comment">// 15</span></span><br></pre></td></tr></table></figure></li>
+<li><p><code>parseInt(param, index)</code>支持第二个参数, 可以指定要转换数字的进制;</p>
+<ol>
+<li><p>将十六进制转换为十进制:</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> num = <span class="built_in">parseInt</span>(<span class="string">&quot;0xAF&quot;</span>, <span class="number">16</span>); <span class="comment">// 175</span></span><br><span class="line"><span class="keyword">let</span> num1 = <span class="built_in">parseInt</span>(<span class="string">&quot;AF&quot;</span>, <span class="number">16</span>); <span class="comment">// 175  指定了进制之后, 十六进制的标志 0x 可以忽略</span></span><br><span class="line"><span class="keyword">let</span> num2 = <span class="built_in">parseInt</span>(<span class="string">&quot;AF&quot;</span>); <span class="comment">// NaN</span></span><br></pre></td></tr></table></figure></li>
+<li><p>将不同进制数字字符串转换为十进制</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> num1 = <span class="built_in">parseInt</span>(<span class="string">&quot;10&quot;</span>,<span class="number">2</span>); <span class="comment">// 2 将二进制的 10 转换为十进制</span></span><br><span class="line"><span class="keyword">let</span> num2 = <span class="built_in">parseInt</span>(<span class="string">&quot;10&quot;</span>, <span class="number">8</span>); <span class="comment">// 8 将八进制的 10 转换为十进制</span></span><br><span class="line"><span class="keyword">let</span> num3 = <span class="built_in">parseInt</span>(<span class="string">&quot;10&quot;</span>, <span class="number">10</span>); <span class="comment">// 10 将十进制的 10 转换为十进制</span></span><br><span class="line"><span class="keyword">let</span> num4 = <span class="built_in">parseInt</span>(<span class="string">&quot;10&quot;</span>, <span class="number">16</span>); <span class="comment">// 16 将十六进制的 10 转换为十进制</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+</ol>
+<h4 id="parseFloat"><a href="#parseFloat" class="headerlink" title="parseFloat()"></a>parseFloat()</h4><p><code>parseFloat()</code>函数的工作方式跟<code>parseInt()</code>类似; </p>
+<ol>
+<li> 从位置[0]开始检测每个字符; </li>
+<li> 依次对字符串进行解析, 直到末尾或者出现无效浮点数值为止, 一旦无效就返回当前有效结果;</li>
+<li> 第一次出现的小数点是有效的, 第二次出现的则无效, 一旦无效则返回当前有效结果;</li>
+<li> 始终忽略字符串开头的 0; </li>
+<li> 只能解析十进制, 如果入参是十六进制, 则直接返回 0;</li>
+<li> 如果字符串只有整数或者小数点后面只有 0, 那么<code>parseFloat()</code>会返回整数;</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> num1 = <span class="built_in">parseFloat</span>(<span class="string">&quot;1234blue&quot;</span>); <span class="comment">// 1234</span></span><br><span class="line"><span class="keyword">let</span> num2 = <span class="built_in">parseFloat</span>(<span class="string">&quot;0xA&quot;</span>); <span class="comment">// 0</span></span><br><span class="line"><span class="keyword">let</span> num3 = <span class="built_in">parseFloat</span>(<span class="string">&quot;22.5&quot;</span>); <span class="comment">// 22.5</span></span><br><span class="line"><span class="keyword">let</span> num4 = <span class="built_in">parseFloat</span>(<span class="number">22.34</span><span class="number">.5</span>); <span class="comment">// 22.34</span></span><br><span class="line"><span class="keyword">let</span> num5 = <span class="built_in">parseFloat</span>(<span class="string">&quot;0908.5&quot;</span>); <span class="comment">// 908.5</span></span><br><span class="line"><span class="keyword">let</span> num6 = <span class="built_in">parseFloat</span>(<span class="number">3.14e5</span>) <span class="comment">// 314000</span></span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<h3 id="String-类型"><a href="#String-类型" class="headerlink" title="String 类型"></a>String 类型</h3><p>String 字符串类型可以使用 0 个或者多个 16 位的 Unicode 字符序列; 字符串可以使用双引号, 单引号或者反引号`来表示;</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> name1= <span class="string">&quot;kevin&quot;</span>;</span><br><span class="line"><span class="keyword">let</span> name2 = <span class="string">`kevin`</span>;</span><br><span class="line"><span class="keyword">let</span> name3 = <span class="string">&#x27;kevin&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="字符字面量"><a href="#字符字面量" class="headerlink" title="字符字面量"></a>字符字面量</h4><table>
+<thead>
+<tr>
+<th>字面量</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\n</td>
+<td>换行</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>制表</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>退格</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>回车</td>
+</tr>
+<tr>
+<td>\f</td>
+<td>换页</td>
+</tr>
+<tr>
+<td>\\</td>
+<td>反斜杠</td>
+</tr>
+<tr>
+<td>\‘</td>
+<td>单引号</td>
+</tr>
+<tr>
+<td>\“</td>
+<td>双引号</td>
+</tr>
+<tr>
+<td>\`</td>
+<td>反引号</td>
+</tr>
+<tr>
+<td>\xnn</td>
+<td>十六进制编码 nn 的字符</td>
+</tr>
+<tr>
+<td>\unnnn</td>
+<td>十六进制编码nnnn 表示的 unicode 字符</td>
+</tr>
+</tbody></table>
+<h4 id="字符串的长度"><a href="#字符串的长度" class="headerlink" title="字符串的长度"></a>字符串的长度</h4><p>字符串可以通过<code>length</code>属性来获取长度</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> num = <span class="string">&quot;123&quot;</span>;</span><br><span class="line"><span class="built_in">console</span>.log(num.length); <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="toString-NaN"><a href="#toString-NaN" class="headerlink" title="toString()"></a>toString()</h4><p>将其他数据类型转换为字符串;</p>
+<ol>
+<li><p>几乎所有的 js 数据类型都有<code>toString()</code>方法, 唯一的用处就是将其他类型转换为字符串;</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> age = <span class="number">11</span>;</span><br><span class="line"><span class="keyword">let</span> age2String = age.toString(); <span class="comment">// &quot;11&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> found = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">let</span> found2String = found.toString(); <span class="comment">// &quot;true&quot;</span></span><br></pre></td></tr></table></figure></li>
+<li><p><code>toString()</code>可以接受参数, 作用是将十进制转换为其他进制</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> num = <span class="number">10</span>;</span><br><span class="line"><span class="built_in">console</span>.log(num.toString()); <span class="comment">// 十进制转十进制</span></span><br><span class="line"><span class="built_in">console</span>.log(num.toString(<span class="number">2</span>)); <span class="comment">// 十进制转二进制</span></span><br><span class="line"><span class="built_in">console</span>.log(num.toString(<span class="number">8</span>)); <span class="comment">// 十进制转八进制</span></span><br><span class="line"><span class="built_in">console</span>.log(num.toString(<span class="number">16</span>)); <span class="comment">// 十进制转十六进制String 的转换规则</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="String"><a href="#String" class="headerlink" title="String()"></a>String()</h4><p><code>String()</code>将其他类型转换为字符串;</p>
+<ol>
+<li><p> 如果传入的参数有 <code>toString()</code>方法, 则直接调用该方法;</p>
+</li>
+<li><p> 如果传入的参数是 null, 则直接返回<code>&quot;null&quot;</code></p>
+</li>
+<li><p>如果传入的参数是 undefined, 则直接返回 <code>&quot;undefined&quot;</code></p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String</span>(<span class="number">10</span>); <span class="comment">// &quot;10&quot;</span></span><br><span class="line"><span class="built_in">String</span>(<span class="literal">true</span>); <span class="comment">// &quot;true&quot;</span></span><br><span class="line"><span class="built_in">String</span>(<span class="literal">null</span>); <span class="comment">// &quot;null&quot;</span></span><br><span class="line"><span class="built_in">String</span>(<span class="literal">undefined</span>); <span class="comment">// &quot;undefined&quot;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h4 id="模板字面量"><a href="#模板字面量" class="headerlink" title="模板字面量"></a>模板字面量</h4><p>es6 中新增了模板字面量, 不同于单引号和双引号, 模板字面量可以换行定义字符串并保留换行符</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> line = <span class="string">`hello world,</span></span><br><span class="line"><span class="string">kevin!`</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="字符串插值"><a href="#字符串插值" class="headerlink" title="字符串插值"></a>字符串插值</h4><p>在模板字面量中, 可以使用<code>$&#123;&#125;</code>在字符串中插入变量, 也可以调用函数和方法; 只能用于使用了模板字面量的字符串中, 不能在””和’’定义的字符串中使用;</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> value = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">let</span> exponet = <span class="string">&quot;second&quot;</span>;</span><br><span class="line"><span class="keyword">let</span> newLine = value + <span class="string">&quot;to the &quot;</span> + exponet + <span class="string">&quot;power is &quot;</span> + (value * value);</span><br><span class="line"><span class="keyword">let</span> newLine2 = <span class="string">`<span class="subst">$&#123;value&#125;</span> to the <span class="subst">$&#123;exponet&#125;</span> power is <span class="subst">$&#123;value * value&#125;</span>`</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<h3 id="Symbol-类型"><a href="#Symbol-类型" class="headerlink" title="Symbol 类型"></a>Symbol 类型</h3><p>Symbol 是 ES6中新增的数据类型, 符号是原始值, 且符号实例是唯一的, 不可变的; 符号的用途是为了确保属性使用唯一标识, 不会发生属性冲突;</p>
+<ol>
+<li><p>符号的基本使用</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> sym = <span class="built_in">Symbol</span>();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span>(sym)); <span class="comment">// symbol</span></span><br></pre></td></tr></table></figure></li>
+<li><p>调用<code>Symbol()</code>函数时, 可以传入一个字符串作为参数对符号进行描述, 这个字符串参数与符号定义或者标识完全无关</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> sym1 = <span class="built_in">Symbol</span>();</span><br><span class="line"><span class="keyword">let</span> sym2 = <span class="built_in">Symbol</span>();</span><br><span class="line"><span class="keyword">if</span> (sym1 == sym2) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;sym1 == sym2&quot;</span>);</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;sym1 != sym2&quot;</span>); <span class="comment">// sym1 !== sym2</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> sym3 = <span class="built_in">Symbol</span>(<span class="string">&quot;foo&quot;</span>);</span><br><span class="line"><span class="keyword">let</span> sym4 = <span class="built_in">Symbol</span>(<span class="string">&quot;foo&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(sym3 == sym4); <span class="comment">// false</span></span><br></pre></td></tr></table></figure></li>
+<li><p> 只要创建 <code>Symbol()</code> 实例并将其作为对象的属性, 那么就可以保证它不会覆盖原有的属性, 无论是符号还是字符串属性;</p>
+</li>
+<li><p> <code>Symbol()</code> 函数不能和 new 关键字一起作为构造函数使用, 因为 new 出来的是一个 Object, 而 Symbol()的话需要产生一个 symbol 的基础数据类型</p>
+</li>
+<li><p>全局符号注册表: 通过 <code>Symbol.for()</code>来注册全局符号, 方便符号的复用; 调用<code>Symbol.for()</code>的时候, 会先检查全局注册表中是否存在对应的符号, 如果存在那么就会调用这个存在的符号进行操作, 如果不存在, 那么就会新建一个符号并返回符号实例;</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> sym1 = <span class="built_in">Symbol</span>.for(<span class="string">&#x27;foo&#x27;</span>); <span class="comment">// 创建新符号</span></span><br><span class="line"><span class="keyword">let</span> sym2 = <span class="built_in">Symbol</span>.for(<span class="string">&#x27;foo&#x27;</span>); <span class="comment">// 重用已有符号</span></span><br><span class="line"><span class="built_in">console</span>.log(sym1 === sym2); <span class="comment">//true</span></span><br></pre></td></tr></table></figure></li>
+<li><p>采用相同的符号描述, 在全局注册表中定义的符号和使用 <code>Symbol.for()</code>定义的符号也并不等同;</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> sym1 = <span class="built_in">Symbol</span>(<span class="string">&quot;foo&quot;</span>);</span><br><span class="line"><span class="keyword">let</span> sym2 = <span class="built_in">Symbol</span>.for(<span class="string">&quot;foo&quot;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(sym1 == sym2); <span class="comment">// false</span></span><br></pre></td></tr></table></figure></li>
+<li><p> 全局注册表中的符号必须使用字符串键来创建, 因此作为参数传给<code>Symbol.for()</code>的任何值都会被转换成字符串;</p>
+</li>
+<li><p>全局注册表中可以使用  <code>Symbol.keyFor()</code>来查询全局注册表, 这个方法接受符号, 返回该全局符号对应的字符串键, 如果查询的不是全局符号, 则返回 undefined;</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建符号</span></span><br><span class="line"><span class="keyword">let</span> s = <span class="built_in">Symbol</span>.for(<span class="string">&quot;foo&quot;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Symbol</span>.keyFor(s)); <span class="comment">// foo</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建普通符号</span></span><br><span class="line"><span class="keyword">let</span> s2 = <span class="built_in">Symbol</span>(<span class="string">&quot;bar&quot;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Symbol</span>.keyFor(s2)); <span class="comment">// undefined </span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果传入的不是符号, 则 Symbol.keyFor()会抛出 TypeError</span></span><br><span class="line"><span class="built_in">Symbol</span>.keyFor(<span class="number">123</span>); <span class="comment">// TypeError: 123 is not a symbol</span></span><br></pre></td></tr></table></figure></li>
+<li><p> 使用符号作为属性</p>
+</li>
+</ol>
+<hr>
+<h3 id="Object-类型"><a href="#Object-类型" class="headerlink" title="Object 类型"></a>Object 类型</h3><ol>
+<li> es 中的对象其实就是一组数据和功能的集合;</li>
+<li> 对象通过 new 操作符和对象类型的名称来创建, 比如 <code>let obj = new Object();</code></li>
+<li> <code>Object</code>也是派生其他类型对象的基类, Object 类型的所有属性和方法在派生对象的身上也同样存在;</li>
+</ol>
+<h4 id="Object-属性和方法"><a href="#Object-属性和方法" class="headerlink" title="Object 属性和方法"></a>Object 属性和方法</h4><ol>
+<li> <code>constructor</code>: 用于创建当前对象的函数, 例如在<code>let obj = new Object();</code>中, <code>Object()</code>函数就是<code>constructor</code>;</li>
+<li> <code>hasOwnProperty(propertyName)</code>: 用于判断当前对象实例(不是原型)上是否存在给定的属性, 要检查的属性名必须是字符串或者符号;</li>
+<li> <code>isPrototypeof(object)</code>: 判断当前调用<code>isPrototypeof()</code>方法的对象是否是入参 object 的原型</li>
+<li> <code>propertyIsEnumerable(propertyName)</code>: 判断入参属性对用的值是否可以使用<code>for-in</code>语句进行枚举</li>
+<li> <code>toLocalString()</code>: 返回对象的字符串表示, 该字符串反应了对象所在本地执行环境;</li>
+<li> <code>toString()</code>: 返回对象的等价字符串表示;</li>
+<li> <code>valueOf()</code>: 返回对象的字符串, 数值或者布尔值表示; 通常和<code>toString()</code>返回的结果相同;</li>
+</ol>
+<hr>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Kevin</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/js_type/">http://example.com/js_type/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">凡墙总是门</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/js%E5%9F%BA%E7%A1%80/">js基础</a></div><div class="post_share"><div class="social-share" data-image="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-06-30-032545.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/js_operation/"><img class="prev-cover" src="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-06-30-032545.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">操作符</div></div></a></div><div class="next-post pull-right"><a href="/js_variaty/"><img class="next-cover" src="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-06-30-032545.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">变量</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/avatar.jpeg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Kevin</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">30</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">19</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/kevinspider"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/kevinspider" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:zhangyang.spider@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#typeOf-%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="toc-number">1.1.</span> <span class="toc-text">typeOf 操作符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Undefined-%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.2.</span> <span class="toc-text">Undefined 类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Null-%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.3.</span> <span class="toc-text">Null 类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Boolean-%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.4.</span> <span class="toc-text">Boolean 类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Number-%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.5.</span> <span class="toc-text">Number 类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%81%E8%BF%9B%E5%88%B6-%E5%85%AB%E8%BF%9B%E5%88%B6%E5%92%8C%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6"><span class="toc-number">1.5.1.</span> <span class="toc-text">十进制, 八进制和十六进制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%AE%E7%82%B9%E6%95%B0"><span class="toc-number">1.5.2.</span> <span class="toc-text">浮点数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A7%91%E5%AD%A6%E8%AE%A1%E6%95%B0%E6%B3%95"><span class="toc-number">1.5.3.</span> <span class="toc-text">科学计数法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%AE%E7%82%B9%E6%95%B0%E7%B2%BE%E5%BA%A6"><span class="toc-number">1.5.4.</span> <span class="toc-text">浮点数精度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%80%BC%E7%9A%84%E8%8C%83%E5%9B%B4"><span class="toc-number">1.5.5.</span> <span class="toc-text">值的范围</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#NaN"><span class="toc-number">1.5.6.</span> <span class="toc-text">NaN</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Number"><span class="toc-number">1.5.7.</span> <span class="toc-text">Number()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#parseInt"><span class="toc-number">1.5.8.</span> <span class="toc-text">parseInt()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#parseFloat"><span class="toc-number">1.5.9.</span> <span class="toc-text">parseFloat()</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#String-%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.6.</span> <span class="toc-text">String 类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E5%AD%97%E9%9D%A2%E9%87%8F"><span class="toc-number">1.6.1.</span> <span class="toc-text">字符字面量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E9%95%BF%E5%BA%A6"><span class="toc-number">1.6.2.</span> <span class="toc-text">字符串的长度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#toString-NaN"><span class="toc-number">1.6.3.</span> <span class="toc-text">toString()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#String"><span class="toc-number">1.6.4.</span> <span class="toc-text">String()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E5%AD%97%E9%9D%A2%E9%87%8F"><span class="toc-number">1.6.5.</span> <span class="toc-text">模板字面量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8F%92%E5%80%BC"><span class="toc-number">1.6.6.</span> <span class="toc-text">字符串插值</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Symbol-%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.7.</span> <span class="toc-text">Symbol 类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Object-%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.8.</span> <span class="toc-text">Object 类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Object-%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%B9%E6%B3%95"><span class="toc-number">1.8.1.</span> <span class="toc-text">Object 属性和方法</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/js_referenceType/" title="js_基本引用类型"><img src="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-06-30-032545.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="js_基本引用类型"/></a><div class="content"><a class="title" href="/js_referenceType/" title="js_基本引用类型">js_基本引用类型</a><time datetime="2021-07-07T05:45:56.000Z" title="发表于 2021-07-07 13:45:56">2021-07-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/js_variability/" title="js_变量/作用域/内存"><img src="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-06-30-032545.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="js_变量/作用域/内存"/></a><div class="content"><a class="title" href="/js_variability/" title="js_变量/作用域/内存">js_变量/作用域/内存</a><time datetime="2021-07-06T07:29:30.000Z" title="发表于 2021-07-06 15:29:30">2021-07-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/js_statement/" title="js_语句"><img src="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-06-30-032545.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="js_语句"/></a><div class="content"><a class="title" href="/js_statement/" title="js_语句">js_语句</a><time datetime="2021-07-05T07:08:21.000Z" title="发表于 2021-07-05 15:08:21">2021-07-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/js_operation/" title="操作符"><img src="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-06-30-032545.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="操作符"/></a><div class="content"><a class="title" href="/js_operation/" title="操作符">操作符</a><time datetime="2021-07-02T02:27:57.000Z" title="发表于 2021-07-02 10:27:57">2021-07-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/js_type/" title="数据类型"><img src="https://kevinspider-1258012111.cos.ap-shanghai.myqcloud.com/2021-06-30-032545.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数据类型"/></a><div class="content"><a class="title" href="/js_type/" title="数据类型">数据类型</a><time datetime="2021-06-30T07:40:34.000Z" title="发表于 2021-06-30 15:40:34">2021-06-30</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By Kevin</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk({
+      clientID: 'e26403e0bb1e289c53e6',
+      clientSecret: '5826f8314e51e7f17499d405d916c47d2bae3ec4',
+      repo: 'kevinspider.github.io',
+      owner: 'kevinspider',
+      admin: ['kevinspider'],
+      id: 'e465737879e75441eff289c37681d3dd',
+      language: 'en',
+      perPage: 10,
+      distractionFreeMode: false,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      updateCountCallback: commentCount
+    })
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !true) {
+  if (true) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div></div></body></html>
