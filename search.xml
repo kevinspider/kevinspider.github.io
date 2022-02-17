@@ -2,6 +2,31 @@
 <search> 
   
   
+    
+    <entry>
+      <title>hello world</title>
+      <link href="frida/hello-world/"/>
+      <url>frida/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>测试分类</p><p>博客暂时关闭</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> frida </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> frida </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
   
   
 </search>
