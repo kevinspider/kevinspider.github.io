@@ -362,7 +362,7 @@ document.addEventListener('DOMContentLoaded', function () {
   /**
  *  toc
  */
-  const tocFn = function () {
+  window.tocFn = function () {
     const $cardTocLayout = document.getElementById('card-toc')
     const $cardToc = $cardTocLayout.getElementsByClassName('toc-content')[0]
     const $tocLink = $cardToc.querySelectorAll('.toc-link')
