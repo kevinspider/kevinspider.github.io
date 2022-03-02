@@ -5475,6 +5475,7 @@ blockquote.pullquote.right {
   }
 }
 #aside-content #card-toc .toc-content {
+  overflow-y: visible;
   max-height: calc(100vh - 120px);
 }
 .search-dialog {
