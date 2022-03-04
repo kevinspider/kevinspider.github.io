@@ -58,25 +58,6 @@
     
     
     <entry>
-      <title></title>
-      <link href="art/undefined/"/>
-      <url>art/undefined/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      <categories>
-          
-          <category> art </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>idapython</title>
       <link href="ida/idapython/"/>
       <url>ida/idapython/</url>
